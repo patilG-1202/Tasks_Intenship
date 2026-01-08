@@ -1,0 +1,82 @@
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Card Container */
+.card {
+    width: 320px;
+    height: 460px;
+    background-color: #f6d55c;
+    border: 10px solid #f1c232;
+    border-radius: 15px;
+    margin: 30px auto;
+    padding: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Header */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title .basic {
+    font-size: 12px;
+}
+
+.title .name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.hp {
+    font-size: 16px;
+    color: red;
+    font-weight: bold;
+}
+
+/* Image Section */
+.image-box {
+    background-color: white;
+    border: 4px solid #d4aa00;
+    margin: 10px 0;
+    padding: 5px;
+}
+
+.image-box img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* Info */
+.info {
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+/* Attack */
+.attack {
+    margin-top: 10px;
+}
+
+.attack-row {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.description {
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+/* Footer */
+.footer {
+    font-size: 10px;
+    margin-top: 15px;
+    text-align: center;
+}
