@@ -1,11 +1,24 @@
 import { useState } from "react";
 
 function ColorBox() {
-  const colors = ["red", "blue", "green", "yellow"];
-  const [index, setIndex] = useState(0);
+  const colors = ["red", "blue", "green", "yellow", "purple", "orange"];
+
+  const [color, setColor] = useState("gray");
+  const [count, setCount] = useState(0);
 
   const changeColor = () => {
-    setIndex((prev) => (prev + 1) % colors.length);
+    let newColor;
+    do {
+      newColor = colors[Math.floor(Math.random() * colors.length)];
+    } while (newColor === color);
+
+    setColor(newColor);
+    setCount(count + 1);
+  };
+
+  const reset = () => {
+    setColor("gray");
+    setCount(0);
   };
 
   return (
@@ -13,17 +26,23 @@ function ColorBox() {
       <div
         onClick={changeColor}
         style={{
-          width: "150px",
-          height: "150px",
+          width: "400px",
+          height: "200px",
+          backgroundColor: color,
           margin: "auto",
-          backgroundColor: colors[index],
           cursor: "pointer",
+          borderRadius: "20px",
+          transition: "background-color 0.4s ease"
         }}
       ></div>
 
-      <button onClick={changeColor} style={{ marginTop: "15px" }}>
-        Change Colour
+      <button onClick={changeColor} style={{ marginTop: "20px" }}>
+        Change Color
       </button>
+
+      <p>Color changed: {count} times</p>
+
+      <button onClick={reset}>Reset</button>
     </div>
   );
 }
